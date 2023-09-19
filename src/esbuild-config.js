@@ -58,10 +58,10 @@ function getEsbuildConfig(config, args) {
         dev ? 'development' : 'production'
       ),
     },
-    loader: {
-      '.js': 'jsx',
-      ...Object.fromEntries(ASSET_EXTENSIONS.map((ext) => [ext, 'file'])),
-    },
+    // loader: {
+    //   '.js': 'jsx',
+    //   ...Object.fromEntries(ASSET_EXTENSIONS.map((ext) => [ext, 'file'])),
+    // },
     legalComments: 'none',
     banner: {
       js: `var __BUNDLE_START_TIME__=this.nativePerformanceNow?nativePerformanceNow():Date.now(); var window = typeof globalThis !== 'undefined' ? globalThis : typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : this;`,
