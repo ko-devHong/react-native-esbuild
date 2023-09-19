@@ -9,7 +9,6 @@ const {
   SOURCE_EXTENSIONS,
   BITMAP_IMAGE_EXTENSIONS,
 } = require('./config');
-const esbuildPluginTsc = require('esbuild-plugin-tsc');
 
 function getEsbuildConfig(config, args) {
   const {

@@ -66,6 +66,8 @@ const syntaxAwareLoaderPlugin = (options = {}) => ({
       }
     };
 
+    const transFormEsmContents = async (args, contents, config) => {};
+
     const transformContents = async (args, contents, config) => {
       const babelOptions = babel.loadOptions({
         minified: false,
@@ -123,6 +125,12 @@ const syntaxAwareLoaderPlugin = (options = {}) => ({
           '@babel/plugin-syntax-flow',
           '@babel/plugin-transform-flow-strip-types',
           '@babel/plugin-syntax-jsx',
+          [
+            '@babel/plugin-transform-modules-commonjs',
+            {
+              allowTopLevelThis: true,
+            },
+          ],
         ],
       });
 

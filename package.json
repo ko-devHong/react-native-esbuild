@@ -46,9 +46,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.15",
     "@react-native/polyfills": "^2.0.0",
     "esbuild": "^0.17.16",
-    "esbuild-plugin-tsc": "^0.4.0",
     "prettier": "^2.6.2",
     "uvu": "^0.5.3"
   },
