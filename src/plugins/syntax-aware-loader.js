@@ -125,6 +125,12 @@ const syntaxAwareLoaderPlugin = (options = {}) => ({
           '@babel/plugin-syntax-flow',
           '@babel/plugin-transform-flow-strip-types',
           '@babel/plugin-syntax-jsx',
+        ],
+      });
+
+    const fullBabelTransform = (args, contents) =>
+      transformContents(args, contents, {
+        plugins: [
           [
             '@babel/plugin-transform-modules-commonjs',
             {
@@ -133,9 +139,6 @@ const syntaxAwareLoaderPlugin = (options = {}) => ({
           ],
         ],
       });
-
-    const fullBabelTransform = (args, contents) =>
-      transformContents(args, contents, {});
 
     build.onLoad({ filter, namespace }, async (args) => {
       let handle;
