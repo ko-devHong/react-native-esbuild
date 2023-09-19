@@ -61,7 +61,6 @@ function getEsbuildConfig(config, args) {
     },
     loader: {
       '.js': 'jsx',
-      '.tsx': 'esbuild-loader',
       ...Object.fromEntries(ASSET_EXTENSIONS.map((ext) => [ext, 'file'])),
     },
     legalComments: 'none',
