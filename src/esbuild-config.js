@@ -91,9 +91,6 @@ function getEsbuildConfig(config, args) {
         cache: dev,
       }),
     ].filter(Boolean),
-    resolver: {
-      sourceExts: ['mjs'],
-    },
   };
 }
 
