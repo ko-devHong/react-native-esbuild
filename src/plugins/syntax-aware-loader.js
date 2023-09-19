@@ -34,6 +34,11 @@ const defaultHasReanimatedSyntax = (contents, filePath) =>
     '"worklet"',
   ].find((fn) => contents.includes(fn));
 
+const defaultHasReactNavigationSyntax = (contents, filePath) =>
+  ['isSearchBarAvailableForCurrentPlatform'].find((fn) =>
+    contents.includes(fn)
+  );
+
 const syntaxAwareLoaderPlugin = (options = {}) => ({
   name: 'syntax-aware-loader',
   setup(build, { transform } = {}) {
@@ -143,6 +148,8 @@ const syntaxAwareLoaderPlugin = (options = {}) => ({
             loader = 'js';
           } else if (hasFlowSyntax(contents, args.path)) {
             contents = await stripFlow(args, contents);
+          } else if (defaultHasReactNavigationSyntax(contents, args.path)) {
+            contents = await fullBabelTransform(args, contents);
           }
 
           entry = {
