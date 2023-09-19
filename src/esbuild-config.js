@@ -90,8 +90,10 @@ function getEsbuildConfig(config, args) {
         filter: /\.([mc]js|[tj]sx?)$/,
         cache: dev,
       }),
-      esbuildPluginTsc(),
     ].filter(Boolean),
+    resolver: {
+      sourceExts: ['mjs'],
+    },
   };
 }
 
